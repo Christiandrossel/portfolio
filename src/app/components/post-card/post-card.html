@@ -1,0 +1,32 @@
+<a [routerLink]="['/post', post?.id]" class="text-decoration-none text-dark">
+  <div class="card h-100 shadow-sm">
+
+    <img *ngIf="post?.imageUrls?.length" [src]="post.imageUrls[0]" class="card-img-top"  alt=""/>
+
+    <div class="card-body">
+      <h5 class="card-title">{{ post?.title }}</h5>
+<!--      <p class="card-text">{{ post?.content | slice:0:120 }}...</p>-->
+      <p class="card-text">{{ previewText }}</p>
+    </div>
+
+    <div class="card-footer text-muted">
+      {{ post?.createdAt | date:'dd.MM.yyyy' }}
+    </div>
+
+  </div>
+</a>
+
+
+<!--<div class="card h-100 shadow-sm">-->
+<!--&lt;!&ndash;  <img *ngIf="post.imageUrls?.length" [src]="post.imageUrls[0]" class="card-img-top" />&ndash;&gt;-->
+<!--  @if (post.imageUrls?.length) {-->
+<!--    <img [src]="post.imageUrls[0]" class="card-img-top" />-->
+<!--  }-->
+<!--  <div class="card-body">-->
+<!--    <h5 class="card-title">{{ post.title }}</h5>-->
+<!--    <p class="card-text">{{ post.content | slice:0:120 }}...</p>-->
+<!--  </div>-->
+<!--  <div class="card-footer text-muted">-->
+<!--    {{ post.createdAt | date:'dd.MM.yyyy' }}-->
+<!--  </div>-->
+<!--</div>-->

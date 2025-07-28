@@ -1,0 +1,50 @@
+<div class="container mt-4">
+  <h2>Neuen Blogpost erstellen</h2>
+  <form (ngSubmit)="onSubmit()" #form="ngForm">
+
+    <div class="mb-3">
+      <label class="form-label">Titel</label>
+      <input type="text" class="form-control" [(ngModel)]="post.title" name="title" required />
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label">Inhalt</label>
+
+      <div class="NgxEditor__Wrapper border rounded">
+        <ngx-editor-menu [editor]="editor"></ngx-editor-menu>
+        <app-post-code-button [editor]="editor"></app-post-code-button>
+        <ngx-editor
+          [editor]="editor"
+          [(ngModel)]="post.content"
+          [placeholder]="'Hier kannst du deinen Beitrag schreiben...'"
+          name="content">
+        </ngx-editor>
+      </div>
+    </div>
+
+
+
+    <div class="mb-3">
+      <label class="form-label">Kategorie</label>
+      <select class="form-select" [(ngModel)]="post.category" name="category" required>
+        <option *ngFor="let cat of categories" [value]="cat">{{ cat }}</option>
+      </select>
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label">Bild-URLs (kommagetrennt)</label>
+      <input type="text" class="form-control" [(ngModel)]="imageUrlsString" name="imageUrls" />
+    </div>
+
+    <div class="form-check mb-3">
+      <input type="checkbox" class="form-check-input" [(ngModel)]="post.isPrivate" name="isPrivate" />
+      <label class="form-check-label">Privater Beitrag</label>
+    </div>
+
+    <h5>Vorschau</h5>
+    <div class="border p-3" [innerHTML]="post.content"></div>
+
+
+    <button type="submit" class="btn btn-primary">Erstellen</button>
+  </form>
+</div>
