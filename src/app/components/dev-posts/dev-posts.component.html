@@ -1,0 +1,8 @@
+<div class="container mt-4">
+  <h2>Software Development</h2>
+  <div class="row g-4">
+    <div class="col-md-6 col-lg-4" *ngFor="let post of devPosts">
+      <app-post-card [post]="post" />
+    </div>
+  </div>
+</div>
