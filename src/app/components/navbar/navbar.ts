@@ -9,7 +9,6 @@ import { LoginComponent } from '../login/login.component';
   imports: [
     RouterLink,
     CommonModule,
-    LoginComponent,
   ],
   templateUrl: './navbar.html',
   styleUrl: './navbar.scss'

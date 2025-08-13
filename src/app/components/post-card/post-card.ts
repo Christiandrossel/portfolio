@@ -1,7 +1,7 @@
 import {Component, Input, OnInit, Inject, PLATFORM_ID } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { Post } from '../../models/post.model';
-import {DatePipe, SlicePipe, isPlatformBrowser} from '@angular/common';
+import {DatePipe, isPlatformBrowser} from '@angular/common';
 import { CommonModule } from '@angular/common';
 import {RouterLink} from '@angular/router';
 
@@ -11,7 +11,6 @@ import {RouterLink} from '@angular/router';
   imports: [
     CommonModule,
     RouterModule,
-    SlicePipe,
     DatePipe,
     RouterLink
   ],
@@ -19,7 +18,7 @@ import {RouterLink} from '@angular/router';
   styleUrl: './post-card.scss'
 })
 export class PostCard implements OnInit {
-  @Input() post!: Post;
+  @Input({required: true}) post!: Post;
 
   previewText: string = '';
 

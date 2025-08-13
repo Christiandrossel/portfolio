@@ -8,8 +8,6 @@ import {PostCard} from '../post-card/post-card';
   selector: 'app-home',
   imports: [
     NgForOf,
-    SlicePipe,
-    DatePipe,
     PostCard
   ],
   templateUrl: './home.component.html',
