@@ -5,9 +5,6 @@ import {NgOptimizedImage} from '@angular/common';
   selector: 'app-about-me',
   standalone: true,
   templateUrl: './about-me.component.html',
-  imports: [
-    NgOptimizedImage
-  ],
   styleUrls: ['./about-me.component.scss']
 })
 export class AboutMeComponent {}
